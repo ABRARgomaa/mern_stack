@@ -11,17 +11,17 @@ const Public = () => {
                     <h1>Coffee</h1>
                 </div>
                 <nav className="public__nav">
-                    <Link to="/">Home</Link>
-                    <Link to="/about">About</Link>
-                    <Link to="/coffee">Coffee</Link>
-                    <Link to="/contact">Contact</Link>
+                    <Link to="/" className="nav-link">Home</Link>
+                    <Link to="/about" className="nav-link">About</Link>
+                    <Link to="/coffee" className="nav-link">Coffee</Link>
+                    <Link to="/contact" className="nav-link">Contact</Link>
                     <Link to="/login" className="login-link">Login</Link>
                 </nav>
             </header>
             <main className="public__main">
                 <h2>Start The Day With Great Taste</h2>
-                <p></p>
-                <button className="special-button">Today Special</button>
+                <p>Your daily dose of freshly brewed coffee awaits.</p>
+                <button className="special-button">Today's Special</button>
             </main>
         </section>
     );

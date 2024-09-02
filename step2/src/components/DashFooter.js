@@ -10,7 +10,7 @@ const DashFooter = () => {
     const onGoHomeClicked = () => navigate('/')
 
     let goHomeButton = null
-    if (pathname == '/coffee') {
+    if (pathname === '/coffee') {
         goHomeButton = (
             <button
                 className="dash-footer__button icon-button"
