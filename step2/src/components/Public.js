@@ -1,20 +1,47 @@
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee, faMapMarkerAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Footer from './Footer';
 import Header from './Header';
 
+const FeatureBox = ({ icon, title, description }) => (
+    <div className="feature-box">
+        <FontAwesomeIcon icon={icon} className="feature-icon" />
+        <h3>{title}</h3>
+        <p>{description}</p>
+    </div>
+);
+
 const Public = () => {
     return (
-        <>
-        <section className="public">
+        <div className="page-container">
             <Header />
             <main className="public__main">
-                <h2>Start The Day With Great Taste</h2>
-                <p>Your daily dose of freshly brewed coffee awaits.</p>
-                <button className="special-button">Today's Special</button>
+                <div className="hero-section">
+                    <h1>Welcome to Cozy Corner Café</h1>
+                    <p>Keep calm and grab coffee</p>
+                    <button className="order-button">Order Now</button>
+                </div>
+                <div className="feature-section">
+                    <FeatureBox 
+                        icon={faCoffee}
+                        title="Premium Coffee"
+                        description="Enjoy our selection of locally roasted, artisanal coffee blends."
+                    />
+                    <FeatureBox 
+                        icon={faMapMarkerAlt}
+                        title="Cozy Atmosphere"
+                        description="Relax in our warm, inviting space designed for comfort."
+                    />
+                    <FeatureBox 
+                        icon={faEnvelope}
+                        title="Weekly Specials"
+                        description="Subscribe to our newsletter for exclusive offers and events."
+                    />
+                </div>
             </main>
-            
-        </section>
-        <Footer />
-        </>
+            <Footer />
+        </div>
     );
 };
 

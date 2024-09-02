@@ -5,162 +5,169 @@
   box-sizing: border-box;
 }
 
-/* General styles for layout */
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
 /* Root variables for consistent styling */
 :root {
-  --BORDER-COLOR: #FFF;
-  --COLOR: #FFF;
-  --BACKGROUND-COLOR: rgba(109, 77, 36, 0.7); /* Semi-transparent background */
-  --DARK-BROWN: #493827;
+  --DARK-BROWN: #4A3728;
+  --LIGHT-BROWN: #D2B48C;
   --WHITE: #FFF;
+  --CREAM: #FDF5E6;
 }
 
 /* Body styles */
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Arial', sans-serif;
   min-height: 100vh;
-  color: var(--DARK-BROWN); /* Dark brown text */
-  background-color: #FFF; /* White background */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 0; /* Remove default margin */
+  background-color: var(--CREAM);
+  margin: 0;
   padding: 0;
 }
 
-/* General text color */
-h1, h2, p, a {
-  color: var(--DARK-BROWN); /* Dark brown text */
+/* Page container styles */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Link styles */
-a {
-  text-decoration: none;
+.main-content {
+  flex: 1 0 auto;
+  padding: 20px;
 }
-
-a,
-a:visited {
-  color: var(--DARK-BROWN);
-}
-
-a:hover,
-a:focus-visible {
-  color: rgba(245, 245, 245, 0.9);
-}
-
 /* Header styles */
 .header {
+  background-color: var(--DARK-BROWN);
+  padding: 1em 2em;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  background-color: var(--BACKGROUND-COLOR);
-  padding: 1em;
-  border-bottom: 1px solid var(--BORDER-COLOR);
-  width: 100%; /* Full width of viewport */
-  position: relative; /* Normal flow */
-  z-index: 1; /* Ensure header is above content */
 }
 
-/* Logo container styles */
 .logo-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   color: var(--WHITE);
 }
 
-/* Logo styles */
 .logo {
-  font-size: 3rem;
+  font-size: 1.5rem;
+  margin-right: 0.5em;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.logo-link {
+  color: white;
+  text-decoration: none; /* Remove underline */
+}
+
+.logo-link:hover,
+.logo-link:focus,
+.logo-link:active {
+  color: white; /* Maintain white color on hover, focus, and active states */
 }
 
 /* Navigation styles */
 .nav {
   display: flex;
-  gap: 5rem;
-  margin-top: 1em;
+  gap: 2rem;
 }
 
-/* Public section styles */
-.public {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Ensure full viewport height */
+.nav-link, .login-link {
+  color: var(--WHITE);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.login-link {
+  background-color: var(--LIGHT-BROWN);
+  color: var(--DARK-BROWN);
+  padding: 0.5em 1em;
+  border-radius: 20px;
 }
 
 /* Main content styles */
 .public__main {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  flex: 1; /* Allow this section to take up available space */
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+}
+
+.hero-section {
   text-align: center;
-  max-width: 800px; /* Set a max-width for better control */
-  width: 100%;
-  padding: 1em; /* Adjust padding as needed */
-  background-color: #FFF; /* White background */
-  color: var(--DARK-BROWN); /* Dark brown text */
+  margin-bottom: 3em;
 }
 
-/* Heading and paragraph styles */
-.public__main h2,
-.public__main p {
-  margin: 0; /* Reset default margins to ensure proper centering */
-}
-
-.public__main h2 {
+.hero-section h1 {
   color: var(--DARK-BROWN);
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.public__main p {
+.hero-section p {
   color: var(--DARK-BROWN);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Button styles */
-.special-button {
-  background-color: transparent;
-  border: 2px solid var(--DARK-BROWN);
+.order-button {
+  background-color: var(--LIGHT-BROWN);
   color: var(--DARK-BROWN);
-  padding: 0.5em 1.5em;
+  border: none;
+  padding: 0.75em 1.5em;
   font-size: 1rem;
   cursor: pointer;
+  border-radius: 20px;
 }
 
-.special-button:hover {
-  background-color: var(--DARK-BROWN);
-  color: var(--WHITE);
+.feature-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.feature-box {
+  background-color: var(--WHITE);
+  padding: 2em;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: var(--LIGHT-BROWN);
+  margin-bottom: 1em;
+}
+
+.feature-box h3 {
+  color: var(--DARK-BROWN);
+  margin-bottom: 0.5em;
+}
+
+.feature-box p {
+  color: var(--DARK-BROWN);
 }
 
 /* Footer styles */
 .footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--BACKGROUND-COLOR);
-  padding: 1em;
-  border-top: 1px solid var(--BORDER-COLOR);
-  width: 100%; /* Full width of viewport */
-  position: fixed; /* Fix to the bottom of the viewport */
-  bottom: 0; /* Position at the bottom */
-  left: 0; /* Full width of viewport */
-  z-index: 1; /* Ensure footer is above content */
+  background-color: var(--DARK-BROWN);
+  color: var(--WHITE);
+  padding: 1em 2em;
+  text-align: center;
+  flex-shrink: 0;
 }
 
 .footer__container {
   display: flex;
-  justify-content: center; /* Center items horizontally */
-  align-items: center;
-  gap: 2em; /* Space between items */
-  color: var(--WHITE);
+  justify-content: center;
+  gap: 2em;
 }
 
 .footer__item {
@@ -169,10 +176,6 @@ a:focus-visible {
   gap: 0.5em;
 }
 
-.footer__item p {
-  margin: 0;
-}
-
 .footer__item svg {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
