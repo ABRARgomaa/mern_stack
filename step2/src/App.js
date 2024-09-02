@@ -5,7 +5,6 @@ import Public from './components/Public';
 import Welcome from './features/auth/Welcome';
 import Login from './features/auth/Login';
 import NotesList from './features/auth/notes/NotesList';
-import UsersList from './features/auth/users/UsersList';
 
 function App() {
   return (
@@ -14,10 +13,7 @@ function App() {
         <Route index element={<Public />} />
         <Route path="login" element={<Login />} />
 
-        <Route path="dash" element={<DashLayout />}>
-          <Route index element={<Welcome />} />
-          <Route path="notes" element={<NotesList />} />
-          <Route path="users" element={<UsersList />} />
+        <Route path="coffee" element={<DashLayout />}>
         </Route>
       </Route>
     </Routes>
