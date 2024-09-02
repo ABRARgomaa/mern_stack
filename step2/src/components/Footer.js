@@ -8,18 +8,26 @@ const Footer = () => {
             <div className="footer__container">
                 <div className="footer__item">
                     <FontAwesomeIcon icon={faPhone} />
-                    <p>+2234-333-560</p>
+                    <p>
+                        <a href="https://wa.me/2234333550" className="footer-link">
+                        +20 102 686 7665
+                        </a>
+                    </p>
                 </div>
                 <div className="footer__item">
                     <FontAwesomeIcon icon={faEnvelope} />
-                    <p>coffeeshop@gmail.com</p>
+                    <p>
+                        <a href="mailto:coffeeshop@gmail.com" className="footer-link">
+                            abrargomaa111@gmail.com
+                        </a>
+                    </p>
                 </div>
                 <div className="footer__item">
                     <FontAwesomeIcon icon={faMapMarkerAlt} />
                     <p>43 Anywhere St. Anycity</p>
                 </div>
             </div>
-            <p>© 2024 Cozy Corner Café. All rights reserved.</p>
+            <p className='small'>© 2024 Cozy Corner Café. All rights reserved.</p>
         </footer>
     )
 }

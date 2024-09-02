@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faMapMarkerAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Footer from './Footer';
 import Header from './Header';
+import { Link } from 'react-router-dom';
 
 const FeatureBox = ({ icon, title, description }) => (
     <div className="feature-box">
@@ -20,7 +21,9 @@ const Public = () => {
                 <div className="hero-section">
                     <h1>Welcome to Cozy Corner Café</h1>
                     <p>Keep calm and grab coffee</p>
-                    <button className="order-button">Order Now</button>
+                    <Link to="/order">
+                        <button className="order-button">Order Now</button>
+                    </Link>
                 </div>
                 <div className="feature-section">
                     <FeatureBox 

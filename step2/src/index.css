@@ -138,6 +138,12 @@ body {
   text-align: center;
   flex: 1;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.feature-box:hover {
+  transform: translateY(-10px); /* Move the box up */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: enhance the shadow on hover */
 }
 
 .feature-icon {
@@ -178,4 +184,144 @@ body {
 
 .footer__item svg {
   font-size: 1rem;
+}
+.small{
+  font-size: smaller;
+}
+.footer-link {
+  color: white; /* Dark brown color */
+  text-decoration: none; /* Remove underline */
+}
+
+.footer-link:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+.footer .small {
+  margin-top: 1em; /* Adjust the value as needed */
+}
+
+
+
+
+
+
+
+
+
+
+
+about-section {
+  background-color: var(--CREAM); /* Soft background to match your theme */
+  padding: 2em; /* Add some padding for spacing */
+  border-radius: 8px; /* Slightly round the corners for a softer look */
+  max-width: 800px; /* Set a max width to keep the text block narrow and readable */
+  margin: 0 auto; /* Center the section */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+.about-paragraph {
+  font-size: 1.2rem; /* Slightly larger font size for readability */
+  line-height: 1.6; /* Increase line height for better readability */
+  color: var(--DARK-BROWN); /* Use the dark brown color for the text */
+  text-align: justify; /* Justify the text for a clean edge on both sides */
+  margin-bottom: 0; /* Remove any default bottom margin */
+  font-family: 'Georgia', serif; /* Use a serif font for a classic, elegant feel */
+}
+
+/* Optional: Add some subtle emphasis on important parts */
+.about-paragraph strong {
+  color: var(--LIGHT-BROWN); /* Highlight with the light brown color */
+}
+
+
+
+
+
+
+.contact-form-container {
+  text-align: center;
+  padding: 2em;
+}
+
+.contact-info {
+  margin-bottom: 2em;
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  margin-bottom: 1em;
+  color: var(--DARK-BROWN);
+}
+
+.contact-info-box {
+  background-color: var(--WHITE);
+  border: 1px solid var(--DARK-BROWN);
+  border-radius: 8px;
+  padding: 1em;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-info-box p {
+  margin-bottom: 1em;
+  color: var(--DARK-BROWN);
+}
+
+.contact-info-box p strong {
+  color: var(--DARK-BROWN);
+}
+
+.contact-link {
+  color: var(--DARK-BROWN);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--WHITE);
+  border: 1px solid var(--DARK-BROWN);
+  border-radius: 8px;
+  padding: 1em;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5em;
+  color: var(--DARK-BROWN);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid var(--DARK-BROWN);
+  border-radius: 4px;
+}
+
+.contact-form button {
+  background-color: var(--DARK-BROWN);
+  color: var(--WHITE);
+  border: none;
+  padding: 0.75em 1.5em;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.contact-form button:hover {
+  background-color: var(--DARK-BROWN);
+}
+
+.contact-page h1,
+.contact-page p {
+    color: var(--DARK-BROWN); /* Use the dark brown color variable */
 }
