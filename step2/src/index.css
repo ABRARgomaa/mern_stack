@@ -186,7 +186,8 @@ body {
   font-size: 1rem;
 }
 .small{
-  font-size: smaller;
+  font-size: small;
+  color: gray;
 }
 .footer-link {
   color: white; /* Dark brown color */
