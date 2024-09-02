@@ -1,20 +1,38 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
 
 const DashHeader = () => {
+    const navigate = useNavigate();
+    const { pathname } = useLocation();
 
-    const content = (
+    const onGoHomeClicked = () => navigate('/');
+
+    let goHomeButton = null;
+    if (pathname === '/coffee') {
+        goHomeButton = (
+            <button
+                className="dash-header__button icon-button"
+                title="Home"
+                onClick={onGoHomeClicked}
+            >
+                <FontAwesomeIcon icon={faHouse} />
+            </button>
+        );
+    }
+
+    return (
         <header className="dash-header">
             <div className="dash-header__container">
                 <Link to="/coffee">
-                    <h1 className="dash-header__title">coffee</h1>
+                    <h1 className="dash-header__title">Coffee</h1>
                 </Link>
                 <nav className="dash-header__nav">
-                    {/* add nav buttons later */}
+                    {goHomeButton}
                 </nav>
             </div>
         </header>
-    )
+    );
+};
 
-    return content
-}
-export default DashHeader
+export default DashHeader;

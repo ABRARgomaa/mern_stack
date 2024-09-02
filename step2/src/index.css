@@ -99,3 +99,59 @@ a:focus-visible {
   background-color: var(--DARK-BROWN);
   color: var(--WHITE);
 }
+
+
+
+
+
+/* DashHeader.css */
+.dash-header {
+  background-color: var(--BACKGROUND-COLOR); /* Semi-transparent background */
+  color: var(--WHITE);
+  padding: 0.5em; /* Reduced padding for a thinner header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid var(--BORDER-COLOR); /* Matching border color */
+  height: auto; /* Adjust height based on content */
+}
+
+.dash-header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px; /* Reduced gap */
+}
+
+.dash-header__title {
+  font-size: 1.5rem; /* Slightly smaller font size */
+  color: var(--WHITE);
+  text-decoration: none;
+  margin: 0;
+}
+
+.dash-header__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px; /* Reduced gap */
+  margin-top: 5px; /* Reduced margin-top */
+}
+
+.dash-header__button {
+  background: none;
+  border: none;
+  color: var(--WHITE);
+  cursor: pointer;
+  font-size: 1.25rem; /* Slightly smaller font size */
+  padding: 5px; /* Reduced padding */
+  transition: color 0.3s;
+}
+
+.dash-header__button:hover {
+  color: rgba(245, 245, 245, 0.9); /* Light color for hover effect */
+}
+
+.icon-button {
+  font-size: 1.5rem; /* Adjusted font size */
+}
