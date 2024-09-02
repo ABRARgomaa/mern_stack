@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
-import DashLayout from './components/DashLayout';
 import Public from './components/Public';
 import Login from './features/auth/Login';
+import Menu from './components/Menu';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Route index element={<Public />} />
         <Route path="login" element={<Login />} />
 
-        <Route path="coffee" element={<DashLayout />}>
+        <Route path="menu" element={<Menu />}>
         </Route>
       </Route>
     </Routes>

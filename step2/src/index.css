@@ -1,9 +1,17 @@
+/* Reset default styles and set box-sizing for all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* General styles for layout */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Root variables for consistent styling */
 :root {
   --BORDER-COLOR: #FFF;
   --COLOR: #FFF;
@@ -12,26 +20,32 @@
   --WHITE: #FFF;
 }
 
+/* Body styles */
 body {
   font-family: 'Nunito', sans-serif;
   min-height: 100vh;
-  color: #FFF; /* White text */
-  background-color: #F5F5DC; /* Beige color */
+  color: var(--DARK-BROWN); /* Dark brown text */
+  background-color: #FFF; /* White background */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-h1, h2, p, a {
-  color: #FFF; /* White text */
+  margin: 0; /* Remove default margin */
+  padding: 0;
 }
 
+/* General text color */
+h1, h2, p, a {
+  color: var(--DARK-BROWN); /* Dark brown text */
+}
+
+/* Link styles */
 a {
   text-decoration: none;
 }
 
 a,
 a:visited {
-  color: var(--WHITE);
+  color: var(--DARK-BROWN);
 }
 
 a:hover,
@@ -39,25 +53,20 @@ a:focus-visible {
   color: rgba(245, 245, 245, 0.9);
 }
 
-.public {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 2em;
-  align-items: center;
-  text-align: center;
-}
-
-.public__header {
+/* Header styles */
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--BACKGROUND-COLOR);
   padding: 1em;
   border-bottom: 1px solid var(--BORDER-COLOR);
-  width: 100%;
+  width: 100%; /* Full width of viewport */
+  position: relative; /* Normal flow */
+  z-index: 1; /* Ensure header is above content */
 }
 
+/* Logo container styles */
 .logo-container {
   display: flex;
   flex-direction: column;
@@ -65,14 +74,44 @@ a:focus-visible {
   color: var(--WHITE);
 }
 
+/* Logo styles */
 .logo {
   font-size: 3rem;
 }
 
-.public__nav {
+/* Navigation styles */
+.nav {
   display: flex;
   gap: 5rem;
   margin-top: 1em;
+}
+
+/* Public section styles */
+.public {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure full viewport height */
+}
+
+/* Main content styles */
+.public__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  flex: 1; /* Allow this section to take up available space */
+  text-align: center;
+  max-width: 800px; /* Set a max-width for better control */
+  width: 100%;
+  padding: 1em; /* Adjust padding as needed */
+  background-color: #FFF; /* White background */
+  color: var(--DARK-BROWN); /* Dark brown text */
+}
+
+/* Heading and paragraph styles */
+.public__main h2,
+.public__main p {
+  margin: 0; /* Reset default margins to ensure proper centering */
 }
 
 .public__main h2 {
@@ -86,6 +125,7 @@ a:focus-visible {
   margin-bottom: 2rem;
 }
 
+/* Button styles */
 .special-button {
   background-color: transparent;
   border: 2px solid var(--DARK-BROWN);
@@ -100,65 +140,39 @@ a:focus-visible {
   color: var(--WHITE);
 }
 
-
-
-
-/* DashHeader.css */
-.dash-header {
+/* Footer styles */
+.footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--BACKGROUND-COLOR);
-  padding: 1em; /* Padding inside the header */
-  border-bottom: 1px solid var(--BORDER-COLOR);
-  width: calc(100% - 3.5em); /* Adjusted width for side margins */
-  max-width: 1700px; /* Optional: Set a maximum width if needed */
-  margin: 2em auto; /* Center the header and add white space above and below */
+  padding: 1em;
+  border-top: 1px solid var(--BORDER-COLOR);
+  width: 100%; /* Full width of viewport */
+  position: fixed; /* Fix to the bottom of the viewport */
+  bottom: 0; /* Position at the bottom */
+  left: 0; /* Full width of viewport */
+  z-index: 1; /* Ensure footer is above content */
 }
 
-.dash-header__container {
+.footer__container {
   display: flex;
-  flex-direction: column;
+  justify-content: center; /* Center items horizontally */
   align-items: center;
+  gap: 2em; /* Space between items */
   color: var(--WHITE);
 }
 
-.logo-container {
+.footer__item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  color: var(--WHITE);
+  gap: 0.5em;
 }
 
-.logo {
-  font-size: 1.5rem; /* Reduced font size for the logo */
+.footer__item p {
+  margin: 0;
 }
 
-.dash-header__nav {
-  display: flex;
-  gap: 4rem; /* Adjusted gap if needed */
-  margin-top: 0.5em; /* Reduced margin-top to decrease the space between logo and nav */
-}
-
-.dash {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 2em 3em; /* Increased padding for more white space inside the section */
-  align-items: center;
-  text-align: center;
-  background-color: var(--BACKGROUND-COLOR);
-  border-bottom: 1px solid var(--BORDER-COLOR);
-  width: calc(100% - 1em); /* Adjusted width to match the header's width */
-  max-width: 1200px; /* Optional: Set a maximum width if needed */
-  margin: 2em auto; /* Center the section and add white space above and below */
-}
-
-.dash__main p {
-  color: var(--DARK-BROWN);
-  margin-bottom: 2rem;
-}
-
-h1 {
-  font-size: 1.5rem; /* Reduced font size for the coffee ward text */
+.footer__item svg {
+  font-size: 1.5rem;
 }
