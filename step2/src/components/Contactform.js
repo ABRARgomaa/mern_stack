@@ -75,16 +75,6 @@ const ContactForm = () => {
               required
             />
 
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-            
             <label htmlFor="message">Message</label>
             <textarea
               id="message"
