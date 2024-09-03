@@ -6,6 +6,7 @@ import Menu from './components/Menu';
 import About from './components/About';
 import Contact from './components/Contact';
 import Order from './components/Order';
+import ProductsList from './features/products/ProductsList';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="order" element={<Order />} />
+        <Route path="products">
+            <Route index element={<ProductsList />} />
+          </Route>
       </Route>
     </Routes>
   );
