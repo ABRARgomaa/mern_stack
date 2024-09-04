@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Public from './components/Public';
 import Login from './components/Login';
-import Menu from './components/Menu';
 import About from './components/About';
 import Contact from './components/Contact';
 import Order from './components/Order';

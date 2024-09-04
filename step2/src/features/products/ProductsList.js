@@ -34,7 +34,6 @@ const ProductsList = () => {
                         <th scope="col" className="table__th product__name">Name</th>
                         <th scope="col" className="table__th product__price">Price</th>
                         <th scope="col" className="table__th product__category">Category</th>
-                        <th scope="col" className="table__th product__edit">Edit</th>
                     </tr>
                 </thead>
                 <tbody>
