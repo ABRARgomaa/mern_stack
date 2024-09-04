@@ -5,7 +5,7 @@ import Login from './components/Login';
 import About from './components/About';
 import Contact from './components/Contact';
 import Order from './components/Order';
-import ProductsList from './features/products/ProductsList';
+import Menu from './components/Menu';
 
 function App() {
   return (
@@ -16,9 +16,7 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="order" element={<Order />} />
-        <Route path="menu">
-            <Route index element={<ProductsList />} />
-          </Route>
+        <Route path="menu" element={<Menu />} />
       </Route>
     </Routes>
   );

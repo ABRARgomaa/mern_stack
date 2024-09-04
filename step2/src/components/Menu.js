@@ -1,3 +1,4 @@
+import ProductsList from "../features/products/ProductsList";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -6,8 +7,7 @@ const Menu = () => {
         <div className="page-container">
             <Header />
             <main className="main-content">
-                <h1>Menu</h1>
-                {/* Add your menu content here */}
+                <ProductsList />
             </main>
             <Footer />
         </div>
