@@ -604,3 +604,11 @@ header.fixed {
   gap: 2rem;
   padding: 2rem;
 }
+
+.no-products-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #8B4513; /* Brown color */
+  padding: 2rem;
+}

@@ -28,17 +28,17 @@ const ProductsList = () => {
         {filteredIds.length ? (
           filteredIds.map(productId => <Product key={productId} productId={productId} />)
         ) : (
-          <p>No products found in this category.</p>
+          <p className="no-products-message">No products found in this category.</p>
         )}
       </div>
     );
   }
 
   return (
-    <div>
-      <h2>{category.replace('-', ' ').toUpperCase()}</h2>
+    <>
+      <h1 className="category-title">{category.replace('-', ' ').toUpperCase()}</h1>
       {content}
-    </div>
+    </>
   );
 };
 
