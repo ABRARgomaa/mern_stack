@@ -412,8 +412,9 @@ about-section {
   background-color: white;
   padding: 2rem;
   border-radius: 8px;
-  width: 75vw;  /* 75% of viewport width */
-  height: 75vh; /* 75% of viewport height */
+  width: 60vw;  /* Adjusted to 60% of viewport width for a square box */
+  height: 60vw; /* Set height to be equal to width */
+  max-height: 75vh; /* Optional: Ensures the modal doesn't exceed viewport height */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: auto; /* Allows scrolling if content overflows */
@@ -438,8 +439,8 @@ about-section {
 }
 
 .modal-image {
-  width: 100%;
-  max-width: 90%; /* Ensures the image fits within the modal */
+  width: 50%;  /* Adjusted to 50% of the modal width */
+  max-width: 300px; /* Optional: Set a max-width to prevent the image from becoming too large */
   height: auto;
   margin-bottom: 1rem;
   object-fit: cover;
