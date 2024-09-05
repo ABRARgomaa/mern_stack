@@ -366,28 +366,27 @@ about-section {
 
 .product-name {
   font-size: 1.25rem;
-  color: var(--primary-color);
+  color: #4a2c2a; /* Dark brown */
   margin-bottom: 0.5rem;
 }
 
 .product-price {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--accent-color);
+  color: #a89b6f; /* Light brown */
   margin-bottom: 0.5rem;
 }
 
 .product-description {
   font-size: 0.9rem;
-  color: var(--text-color);
+  color: #4a2c2a; /* Dark brown */
   margin-bottom: 0.5rem;
 }
 
 .product-category {
   font-size: 0.8rem;
-  color: var(--secondary-color);
+  color: #4a2c2a; /* Keep original or adjust as needed */
 }
-
 
 
 
