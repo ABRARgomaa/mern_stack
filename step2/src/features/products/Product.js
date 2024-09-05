@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectProductById } from './productsApiSlice';
 
 const Product = ({ productId }) => {
-    const [isModalOpen, setIsModalOpen] = useState(false); // State to control the modal
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const product = useSelector((state) => selectProductById(state, productId));
 
     const handleCardClick = () => {
@@ -14,37 +14,49 @@ const Product = ({ productId }) => {
         setIsModalOpen(false);
     };
 
-    if (product) {
-        return (
-            <>
-                <div className="product-card" onClick={handleCardClick}>
-                    <div className="product-image">
-                        <img src={`http://localhost:3500/uploads/${product.image}`} alt={product.name} />
-                    </div>
-                    <div className="product-details">
-                        <h3 className="product-name">{product.name}</h3>
-                        <p className="product-price">${product.price.toFixed(2)}</p>
-                        <p className="product-category">{product.category}</p>
-                    </div>
-                </div>
+    if (!product) return null;
 
-                {/* Modal for showing product details */}
-                {isModalOpen && (
-                    <div className="modal-overlay" onClick={handleCloseModal}>
-                        <div className="modal-box" onClick={(e) => e.stopPropagation()}>
-                            <button className="modal-close" onClick={handleCloseModal}>X</button>
-                            <div className="modal-content">
-                                <img src={`http://localhost:3500/uploads/${product.image}`} alt={product.name} className="modal-image" />
-                                <h3 className="modal-product-name">{product.name}</h3>
-                                <p className="modal-product-price">${product.price.toFixed(2)}</p>
-                                <p className="modal-product-description">{product.description}</p>
-                            </div>
+    return (
+        <>
+            <div className="product-card" onClick={handleCardClick}>
+                <div className="product-image">
+                    <img src={`http://localhost:3500/uploads/${product.image}`} alt={product.name} />
+                </div>
+                <div className="product-details">
+                    <h3 className="product-name">{product.name}</h3>
+                    <p className="product-price">${product.price.toFixed(2)}</p>
+                    <p className="product-category">{product.category}</p>
+                </div>
+            </div>
+
+            {isModalOpen && (
+                <div className="modal-overlay" onClick={handleCloseModal}>
+                    <div className="modal-box" onClick={(e) => e.stopPropagation()}>
+                        <button className="modal-close" onClick={handleCloseModal}>&times;</button>
+                        <div className="modal-content">
+                            <img 
+                                src={`http://localhost:3500/uploads/${product.image}`} 
+                                alt={product.name} 
+                                className="modal-image" 
+                            />
+                            <dl className="modal-product-info">
+                                <dt className="modal-product-name">{product.name}</dt>
+                                <dt>Price:</dt>
+                                <dd className="modal-product-price">${product.price.toFixed(2)}</dd>
+                                {product.category && (
+                                    <>
+                                        <dt>Category:</dt>
+                                        <dd>{product.category}</dd>
+                                    </>
+                                )}
+                                <dd className="modal-product-description">{product.description}</dd>
+                            </dl>
                         </div>
                     </div>
-                )}
-            </>
-        );
-    } else return null;
+                </div>
+            )}
+        </>
+    );
 };
 
 export default Product;
