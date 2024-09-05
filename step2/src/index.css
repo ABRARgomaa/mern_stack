@@ -464,3 +464,28 @@ about-section {
   color: #3b1e1a; /* Darker brown */
   text-align: center;
 }
+
+
+
+
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 60px; /* Adjust this value according to your header height */
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Or any background color you prefer */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure header is above other content */
+}
+
