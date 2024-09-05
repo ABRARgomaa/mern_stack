@@ -15,14 +15,15 @@ const Menu = () => {
     <div className="page-container">
       <Header />
       <main className="main-content">
-        <div className="categories-container">
+      <div className="categories-container">
           {categories.map((category) => (
             <Link
               to={`/menu/${category.slug}`}
               key={category.slug}
-              className="category-box"
+              className="category-item"
             >
-              {category.name}
+              <div className={`category-image ${category.slug}`}></div>
+              <div className="category-name">{category.name}</div>
             </Link>
           ))}
         </div>

@@ -612,3 +612,65 @@ header.fixed {
   color: #8B4513; /* Brown color */
   padding: 2rem;
 }
+
+
+
+.categories-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.category-image {
+  width: 100%;
+  padding-top: 100%; /* This creates a 1:1 aspect ratio */
+  background-size: cover;
+  background-position: center;
+}
+
+.category-name {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.category-item:hover {
+  transform: translateY(-5px);
+}
+
+.category-item:hover .category-name {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+/* Specific background images for each category */
+.hot-drinks {
+  background-image: url('./img/hotDrrr.jpg');
+}
+
+.cold-drinks {
+  background-image: url('./img/coldDrrr.jpg');
+}
+
+.desserts {
+  background-image: url('./img/deserts.jpg');
+}
+
+
+.cakes {
+  background-image: url('./img/cake.jpg');
+}
+
+/* Rest of your CSS remains the same */
