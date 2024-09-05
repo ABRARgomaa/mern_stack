@@ -6,7 +6,7 @@ const Product = ({ productId }) => {
     const [isModalOpen, setIsModalOpen] = useState(false); // State to control the modal
     const product = useSelector((state) => selectProductById(state, productId));
 
-    const handleImageClick = () => {
+    const handleCardClick = () => {
         setIsModalOpen(true);
     };
 
@@ -17,8 +17,8 @@ const Product = ({ productId }) => {
     if (product) {
         return (
             <>
-                <div className="product-card">
-                    <div className="product-image" onClick={handleImageClick}>
+                <div className="product-card" onClick={handleCardClick}>
+                    <div className="product-image">
                         <img src={`http://localhost:3500/uploads/${product.image}`} alt={product.name} />
                     </div>
                     <div className="product-details">
