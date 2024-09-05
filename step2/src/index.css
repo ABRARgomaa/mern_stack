@@ -408,7 +408,7 @@ about-section {
 }
 
 .modal-box {
-  background-color: white;
+  background-color: #FDF5E6; /* Updated background color */
   padding: 2rem;
   border-radius: 8px;
   width: 60vw;  /* 60% of viewport width */
