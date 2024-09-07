@@ -1,25 +1,29 @@
-import { Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
-import Public from './components/Public';
-import Login from './components/Login';
-import About from './components/About';
-import Contact from './components/Contact';
-import Order from './components/Order';
-import Menu from './components/Menu';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './components/Public';
+import AboutPage from './components/About';
+import ContactPage from './components/Contact';
+import MenuPage from './components/Menu';
+import OrderNowPage from './components/Order';
+import Login from './features/auth/Login';
+import Register from './features/auth/Register';
 import ProductsPage from './features/products/ProductPage';
-
+import RequireAuth from './components/RequireAuth';
+import FavoriteProducts from './components/FavoriteProducts';
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Public />} />
-        <Route path="login" element={<Login />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="order" element={<Order />} />
-        <Route path="menu" element={<Menu />} />
-        <Route path="menu/:category" element={<ProductsPage />} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/menu" element={<MenuPage />} />
+      <Route path="/menu/:category" element={<ProductsPage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route element={<RequireAuth />}>
+        <Route path="/order" element={<OrderNowPage />} />
+        <Route path="/favorites" element={<FavoriteProducts />} />
       </Route>
     </Routes>
   );
