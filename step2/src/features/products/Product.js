@@ -12,6 +12,7 @@ const Product = ({ productId }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const product = useSelector((state) => selectProductById(state, productId));
     const user = useSelector(selectCurrentUser);
+    console.log('Current user in Product component:', user);
     const dispatch = useDispatch();
     
     const [addFavorite] = useAddFavoriteProductMutation();
