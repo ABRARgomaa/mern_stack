@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const FavoriteProducts = () => {
     const user = useSelector(selectCurrentUser);
-    const { data: favorites, isLoading, isError, error } = useGetFavoriteProductsQuery(user?.id);
+    const { data: favorites, isLoading, isError, error } = useGetFavoriteProductsQuery();
     const [removeFavorite] = useRemoveFavoriteProductMutation();
 
     if (!user) {
