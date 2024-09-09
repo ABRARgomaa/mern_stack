@@ -12,6 +12,9 @@ const Product = ({ productId }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const product = useSelector((state) => selectProductById(state, productId));
     const user = useSelector(selectCurrentUser);
+    const token = useSelector(state => state.auth.token);
+    console.log('User:', user);
+    console.log('Token:', token);
     console.log('Current user in Product component:', user);
     const dispatch = useDispatch();
     
@@ -29,21 +32,35 @@ const Product = ({ productId }) => {
     };
 
     const handleFavoriteClick = async (e) => {
+        console.log("Favorite button clicked");
         e.stopPropagation();
+        console.log("User:", user);
+        console.log("Product ID:", productId);
+        
         if (!user) {
+            console.log("No user logged in");
             alert("You must be logged in to add favorites.");
             return;
         }
-
+    
         try {
+            console.log("Attempting to update favorite");
             if (isFavorite) {
-                await removeFavorite({ userId: user.id, productId }).unwrap();
+                console.log("Removing from favorites");
+                const result = await removeFavorite(productId).unwrap();
+                console.log("Remove result:", result);
             } else {
-                await addFavorite({ userId: user.id, productId }).unwrap();
+                console.log("Adding to favorites");
+                const result = await addFavorite(productId).unwrap();
+                console.log("Add result:", result);
             }
+            console.log("Favorite update successful");
             setIsFavorite(!isFavorite);
         } catch (err) {
             console.error('Failed to update favorite:', err);
+            if (err.data) console.error('Error data:', err.data);
+            if (err.status) console.error('Error status:', err.status);
+            alert('Failed to update favorite. Please try again.');
         }
     };
 
