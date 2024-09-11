@@ -21,6 +21,7 @@ const Header = () => {
       console.error('Failed to log out:', err);
     }
   };
+  const adminEmails = ['hamad@gmail.com', 'abrargomaa111@gmail.com']
 
   return (
     <header className="header">
@@ -37,6 +38,12 @@ const Header = () => {
             <FontAwesomeIcon icon={faHeart} />
             <span className="sr-only">Favorites</span>
           </Link>
+        )}
+        {/* Conditionally render the Dashboard link */}
+        {isLoggedIn && adminEmails.includes(currentUser?.email) && (
+          <Link to="/admin" className="dashboard-link">
+            Dashboard
+            </Link>
         )}
         {isLoggedIn ? (
           <>

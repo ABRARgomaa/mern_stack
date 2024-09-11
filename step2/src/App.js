@@ -15,6 +15,7 @@ import { selectCurrentToken } from './features/auth/authSlice';
 import { useRefreshMutation } from './features/auth/authApiSlice';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import AdminDashboard from './components/AdminDashboard';
 
 function App() {
   const dispatch = useDispatch();
@@ -51,6 +52,12 @@ function App() {
         <Route element={<RequireAuth />}>
           <Route path="/order" element={<OrderNowPage />} />
         </Route>
+        <Route 
+            path="/admin" 
+            element={
+                <AdminDashboard />
+            } 
+          />
       </Route>
     </Routes>
   );
