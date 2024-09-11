@@ -4,6 +4,24 @@ import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons';
 
 const ProductCard = ({ product, isFavorite, onFavoriteClick, onOpenModal }) => {
+  console.log('ProductCard received product:', product);
+
+  const handleFavoriteClick = (e) => {
+    e.stopPropagation();
+    const id = product?._id || product?.id;
+    console.log('Attempting to remove favorite with ID:', id);
+    if (id) {
+      onFavoriteClick(id);
+    } else {
+      console.error('Product ID is undefined', product);
+    }
+  };
+
+  if (!product) {
+    console.error('Product is undefined');
+    return null;
+  }
+
   return (
     <div className="product-card" onClick={() => onOpenModal(product)}>
       <div className="product-image">
@@ -16,10 +34,7 @@ const ProductCard = ({ product, isFavorite, onFavoriteClick, onOpenModal }) => {
       </div>
       <button 
         className={`favorite-button ${isFavorite ? 'favorite' : ''}`} 
-        onClick={(e) => {
-          e.stopPropagation();
-          onFavoriteClick();
-        }}
+        onClick={handleFavoriteClick}
       >
         <FontAwesomeIcon icon={isFavorite ? fasHeart : farHeart} />
         <span className="sr-only">Favorite</span>

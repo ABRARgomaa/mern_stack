@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { selectCurrentUser } from '../features/auth/authSlice';
 import { useGetFavoriteProductsQuery, useRemoveFavoriteProductMutation } from '../features/auth/authApiSlice';
 import { Link } from 'react-router-dom';
@@ -7,12 +7,14 @@ import ProductCard from './ProductCard';
 import DashHeader from './Header';
 import Footer from './Footer';
 import ProductModal from './ProductModal';
+import {updateUserFavorites } from '../features/auth/authSlice';
 
 const FavoriteProducts = () => {
     const user = useSelector(selectCurrentUser);
     const { data: favorites, isLoading, isError, error } = useGetFavoriteProductsQuery();
     const [removeFavorite] = useRemoveFavoriteProductMutation();
     const [selectedProduct, setSelectedProduct] = useState(null);
+    const dispatch = useDispatch();
 
     if (!user) {
         return (
@@ -56,10 +58,17 @@ const FavoriteProducts = () => {
     const handleRemoveFavorite = async (productId) => {
         try {
             await removeFavorite(productId).unwrap();
+            
+            // Update the user's favorites in the Redux store
+            if (user && user.favorites) {
+                const updatedFavorites = user.favorites.filter(id => id !== productId);
+                dispatch(updateUserFavorites(updatedFavorites));
+            }
         } catch (err) {
             console.error('Failed to remove favorite:', err);
         }
     };
+    
 
     const handleOpenModal = (product) => {
         setSelectedProduct(product);
@@ -81,11 +90,11 @@ const FavoriteProducts = () => {
                         <div className="product-grid">
                             {favorites?.map(product => (
                                 <ProductCard
-                                    key={product.id}
-                                    product={product}
-                                    isFavorite={true}
-                                    onFavoriteClick={() => handleRemoveFavorite(product.id)}
-                                    onOpenModal={handleOpenModal}
+                                key={product._id || product.id}
+                                product={product}
+                                isFavorite={true}
+                                onFavoriteClick={handleRemoveFavorite}
+                                onOpenModal={handleOpenModal}
                                 />
                             ))}
                         </div>
